@@ -1,0 +1,134 @@
+.menu-row-container{
+    height: 40vh;
+    width: 100%;
+    /* background-color: blue; */
+}
+
+.menu-item-container{
+    height: 50vh;
+    width: 45vh;
+    border-radius: 1vh;
+    border: 1px solid rgb(228, 226, 226);
+    float: left;
+    margin-left: 7.5vh;
+    margin-bottom: 2vh;
+    /* background-color: gray; */
+}
+
+.title-menu{
+    font-size: 3.5vh;
+}
+
+.text-menu{
+    font-size: 2vh;
+}
+
+.text-list{
+    font-size: 3vh;
+    margin-left: 2vh;
+}
+
+.menu-img{
+    height: 65%;
+    width: 100%;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+}
+
+.counter-container{
+    height: 3vh;
+    width: 10.25vh;
+    /* background-color: lightcoral; */
+    float:left;
+    margin-top: 1vh;
+    margin-left: 3vh;
+}
+.counter-display{
+    height: 100%;
+    width: 40%;
+    /* background-color: lightblue; */
+    float:left;
+    text-align: center;
+}
+.button-menu{
+    float:left;
+    width: 30%;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    /* border-radius: 1vh; */
+}
+
+.button-buy{
+    margin-top: 1vh;
+    margin-left: 4vh;
+    width: 15vh;
+    /* border-radius: 1vh; */
+}
+
+.button-delete{
+    width: 15vh;
+    height: 4vh;
+    margin-top: .5vh;
+}
+
+.menu-list{
+    float: left;
+    height: 150vh;
+    width: 35%;
+    border: 2vh solid rgba(31, 31, 31, 0.678);
+}
+.list-text-container{
+    width: 50%;
+    /* background-color: blue; */
+    float: left;
+    height: 5vh;
+}
+.list-button-container{
+    width: 50%;
+    height: 5vh;
+    /* background-color: red; */
+    float: left;
+    text-align: center;
+}
+
+@media screen 
+and (min-width: 1201px) 
+and (max-width: 1400px){
+    .menu-item-container{
+        height: 45vh;
+        width: 45vh;
+        margin-left: 3.5vh;
+        margin-bottom: 5vh;
+    }
+    .counter-container{
+        height: 4vh;
+        width: 30%;
+        /* background-color: lightcoral; */
+        float:left;
+        margin-top: 0vh;
+    }
+    .counter-display{
+        height: 100%;
+        width: 40%;
+        /* background-color: lightblue; */
+        float:left;
+        text-align: center;
+    }
+    .button-menu{
+        width: 30%;
+    }
+    .button-buy{
+        margin-top: 0vh;
+        width: 50%;
+        /* border-radius: 1vh; */
+    }
+}

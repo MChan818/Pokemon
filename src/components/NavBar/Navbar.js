@@ -1,5 +1,4 @@
 import React from 'react';
-import ItemCart from '../ItemCart/ItemCart';
 
 import './Navbar.css'
 
@@ -11,8 +10,7 @@ export const NavBar = () =>{
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contacto.html">Contactanos</a></li>
-                <li><a href="horarios.html">Horarios</a></li>               
-                <li><a href="horarios.html"><ItemCart/></a></li>               
+                <li><a href="horarios.html">Horarios</a></li>                        
             </ul>
         </nav>
     )
