@@ -4,7 +4,7 @@ import './Navbar.css'
 
 export const NavBar = () =>{
     return(
-        <nav class="my_menu index-menu-right">
+        <nav className="my_menu index-menu-right">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>

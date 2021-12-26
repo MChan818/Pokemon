@@ -1,36 +1,31 @@
 import React, {useEffect, useState} from "react";
 import PokeList from "../PokeList/PokeList";
+import axios from 'axios';
+import { Container } from 'react-bootstrap';
 
-const apiURL = "https://pokeapi.co/api/v2/pokemon?limit=10"
-// const apiURL = "https://pokeapi.co/api/v2/pokemon/1/"
-
-//EJEMPLO JSON:
-// "results": [
-//     {
-//         "name": "bulbasaur",
-//         "url": "https://pokeapi.co/api/v2/pokemon/1/"
-//       },
 
 export function PokeContainer(){
-    //LLAMAMOS PARA EL PARAMETRO "NAME"
     const [pokemons, setPoke] = useState([]);
-    useEffect(() =>{
-        const call = fetch(apiURL);
-        call.then(result => result.json())
-        .then(data=> setPoke(data.results))
-    }, []);
+    const [contador, setContador] = useState(1);
 
-    // const [newdata, setData] = useState([]);
-    // useEffect(() =>{
-    //     fetch(pokemons.url)
-    //     .then(resultado => resultado.json())
-    //     .then(resultadoJSON => setData(resultadoJSON))
-    // }, []);
+    const morePokemons = () => {
+        setContador(prev => prev + 1)
+        console.log(contador);
+    }
+    const fetchData = async () => {
+        let result =  await axios(`https://pokeapi.co/api/v2/pokemon?limit=${10 * contador}`);
+        setPoke(result.data.results);
+      };
+
+    useEffect(() => {
+        fetchData();
+    }, [contador]);
+
     return(
-        <>
+        <Container>
             <PokeList pokemons = {pokemons}/>
-            {/* Aca iria "newdata" en vez de "pokemons" */}
-        </>
+             <button onClick={morePokemons} className="btn btn-primary">Más Pokemones</button>
+        </ Container>
     );
 };
 
