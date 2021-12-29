@@ -25,7 +25,7 @@ export function PokeContainer(){
         <Container>
             <PokeList pokemons = {pokemons}/>
              <button onClick={morePokemons} className="btn btn-primary">Más Pokemones</button>
-        </ Container>
+        </Container>
     );
 };
 

@@ -1,0 +1,42 @@
+.PokeContainer {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    border: 1px solid black;
+    border-radius: 5vh;
+}
+
+.PokeInfoContainer{
+    background-color: rgb(99, 176, 221);
+    width: 30%;
+    height: 50%;
+    border-radius: 2.5vh;
+
+}
+
+.center{
+    text-align: center;
+}
+.PokeSubtitle{
+    font-size: 2.5vh;
+}
+
+.PokeInfoLeft {
+    width: 50%;
+    height: 75%;
+    float: left;
+    background-color: rgb(235, 235, 235);
+}
+
+.PokeInfoRight {
+    width: 50%;
+    height: 75%;
+    float: left;
+
+}
+
+.PokeImg{
+    width: 50%;
+    margin-left: 25%;
+}

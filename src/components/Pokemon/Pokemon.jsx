@@ -2,10 +2,10 @@ import React, {useEffect, useState} from "react";
 import './Item.css'
 import axios from "axios";
 import { Card } from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
 
 
 const Pokemon = ({ pokemon }) => {
-
     const [pokeInfo, setPokeInfo] = useState({});
 
     useEffect(() => {
@@ -29,6 +29,11 @@ const Pokemon = ({ pokemon }) => {
                     </Card.Title>
                     <Card.Img src={pokeInfo.sprites.front_default} />
                     <Card.Text>Pokedex ID: {pokeInfo.id}</Card.Text>
+                    <NavLink to={`/pokedex/${pokeInfo.id}`}>
+                        <button className="btn btn-primary">
+                            Detalles
+                        </button>
+                    </NavLink>
                 </Card.Body>
             </Card>
             ) : ( 
