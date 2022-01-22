@@ -15,7 +15,7 @@ export function PokeContainer(){
     const fetchData = async () => {
         let result =  await axios(`https://pokeapi.co/api/v2/pokemon?limit=${10 * contador}`);
         setPoke(result.data.results);
-      };
+    };
 
     useEffect(() => {
         fetchData();
