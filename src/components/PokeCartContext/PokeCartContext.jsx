@@ -6,24 +6,18 @@ export const PokeCartProvider = ({children}) => {
     const [PokeCart, SetPokeCart] = useState([]);
 
 
-    const GetFromCart = ({pokemon}) =>{
-        return PokeCart.find(obj => obj === pokemon.name);
-    }
-
-    const IsInCart = ({pokemon}) =>{
-        return pokemon === undefined ? undefined : GetFromCart(pokemon) !== undefined;
-    }
-
     const AddToCart = (pokemon) =>{
-        if(IsInCart(pokemon && pokemon.name)){
-            console.log("No se agregara el pokemon")
+        if(PokeCart.find(name => name.name === pokemon.name) !== undefined){//Verifico si existe el pokemon en el carrito
+            let index = PokeCart.findIndex(name => name.name === pokemon.name) //Ubico el index del pokemon
+            PokeCart[index].quantity += 1; //Agrego 1 a la cantidad en vez de agregar un duplicado
+            console.log(PokeCart) //Chequeo
             return;
         }
         else
-            SetPokeCart([...PokeCart, pokemon.name]);
+            SetPokeCart([...PokeCart, {name:pokemon.name, quantity:1}]);
     }
     return(
-        <PokeCartContext.Provider value={{PokeCart, SetPokeCart, GetFromCart, AddToCart}}>
+        <PokeCartContext.Provider value={{PokeCart, SetPokeCart, AddToCart}}>
             {children}
         </PokeCartContext.Provider>
     )
