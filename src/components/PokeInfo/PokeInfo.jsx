@@ -39,10 +39,7 @@ const PokeInfoD = ({ pokemon }) => {
                             <p className="PokeSubtitle"><strong>Weight:</strong> {pokeInfoD.weight}kg</p>
                         </div>
                     </div>
-                        <button className="btn btn-primary my_btn" 
-                        onClick={() => AddToCart(pokeInfoD)}>Agregar Pokemon
-                        </button>
-                        <PokeDetail></PokeDetail>
+                    <PokeDetail pokemon = {pokeInfoD}></PokeDetail>
             </section>
         ):(
             <div className="center">

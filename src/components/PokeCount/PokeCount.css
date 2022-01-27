@@ -1,0 +1,26 @@
+.counter-container{
+    width: 15vh;
+    height: 5vh;
+    background-color: rgb(231, 229, 229);
+    /* border: 1px solid black; */
+}
+
+.counter-display{
+    float: left;
+    width: 45%;
+    height: 5vh;
+    /* background-color: lightpink; */
+    font-size: 3vh;
+}
+
+.counter-btn{
+    height: 5vh;
+    width: 27.5%;
+    float: left;
+}
+
+.shopping-container{
+    height: 100vh;
+    width: 100vh;
+    /* background-color: lightpink; */
+}

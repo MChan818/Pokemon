@@ -5,6 +5,7 @@ import PokeInfoContainer from './components/PokeInfoContainer/PokeInfoContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { PokeCartProvider } from './components/PokeCartContext/PokeCartContext.jsx';
+import { Home } from './components/Home/Home.jsx';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
         <NavBar/>
         <Switch>
           <Route exact path = "/">
-            <h1>Inicio</h1>
+            <Home/>
           </Route>
             <Route exact path = "/pokedex">
               <PokeContainer/>

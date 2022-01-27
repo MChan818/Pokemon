@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+.fondo{
+    background-image: url(https://images.alphacoders.com/103/thumb-1920-1039414.png);
+    background-size: cover;
+    height: 94vh;
+    width: 100%;
+}
+
+.home-title{
+    display: none;
+}
+
+.logo{
+    transform: translate(50%, 50%);
+}
