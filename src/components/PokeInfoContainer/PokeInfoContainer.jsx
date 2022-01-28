@@ -15,7 +15,7 @@ const PokeInfoContainer = () =>{
     
     useEffect(() => {
         fetchData();
-    },[]);
+    });
     return(
         <>
             <PokeInfoD pokemon={pokecontainer}/>

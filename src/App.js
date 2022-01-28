@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { PokeCartProvider } from './components/PokeCartContext/PokeCartContext.jsx';
 import { Home } from './components/Home/Home.jsx';
+import { TrainerContainer } from './components/TrainerContainer/TrainerContainer.jsx';
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route exact path = "/pokedex/:PokeID" component={PokeInfoContainer}>
               <PokeInfoContainer/>
+            </Route>
+            <Route exact path = "/trainers">
+              <TrainerContainer/>
             </Route>
           </Switch>
       </BrowserRouter>

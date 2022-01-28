@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 
 
 const Pokemon = ({ pokemon }) => {
+    console.log(pokemon)
     const [pokeInfo, setPokeInfo] = useState({});
 
     useEffect(() => {

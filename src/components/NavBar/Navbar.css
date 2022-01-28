@@ -4,7 +4,7 @@
 }
 
 .my_menu_container ul{
-  width: 350px;
+  width: 70vh;
   height: 6vh;
   list-style: none;
   margin:0 auto;
@@ -17,7 +17,7 @@
   text-align: center;
   color: white;
   font-size: 3vh;
-  width: 15vh;
+  width: 20vh;
   height: 6vh;
   line-height: 6vh;
   text-decoration: none;

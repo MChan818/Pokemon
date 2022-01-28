@@ -22,10 +22,17 @@ export function PokeContainer(){
     }, [contador]);
 
     return(
+        <>
+        <Container>
+            <h2>Pokémones</h2>
+            <p>Todos los datos de esta seccion se levantan utilizando una <strong>API</strong></p>
+            <p>Link: https://pokeapi.co/</p>
+        </Container>
         <Container>
             <PokeList pokemons = {pokemons}/>
              <button onClick={morePokemons} className="btn btn-primary">Más Pokemones</button>
         </Container>
+        </>
     );
 };
 

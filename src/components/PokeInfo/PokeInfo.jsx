@@ -6,7 +6,7 @@ import { PokeDetail } from "../PokeCount/PokeCount";
 
 const PokeInfoD = ({ pokemon }) => {
     const [pokeInfoD, setPokeInfoD] = useState([]);
-    const {PokeCart, SetPokeCart, AddToCart} = useContext(PokeCartContext);
+    const {PokeCart} = useContext(PokeCartContext);
     useEffect(() => {
         const fetchData = async (url) => {
             const result = await axios(url);

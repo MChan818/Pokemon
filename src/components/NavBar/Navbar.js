@@ -8,6 +8,7 @@ export const NavBar = () =>{
             <ul>
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/pokedex">Pokédex</a></li>
+                <li><a href="/trainers">Trainers</a></li>
             </ul>
         </nav>
     )
