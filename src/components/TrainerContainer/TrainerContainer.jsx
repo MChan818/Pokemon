@@ -1,7 +1,7 @@
 import React, { useEffect ,useState} from "react";
 import { getFirestore } from "../../firebase";
 import TrainerList from "../TrainerList/TrainerList";
-import { Container , Row} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 export const TrainerContainer = () =>{
 
@@ -23,16 +23,17 @@ export const TrainerContainer = () =>{
         })
 
     },[])
-    console.log(trainers);
+
     return (
         <>
-        <Container>
-            <h2>Entrenadores</h2>
-            <p>Todos los datos de esta seccion se levantan utilizando <strong>FIREBASE</strong></p>
-        </Container>
-        <Container>
+            <Container>
+                <h2>Entrenadores</h2>
+                <p>Todos los datos de esta seccion se levantan utilizando <strong>FIREBASE</strong></p>
+            </Container>
+            <Container>
                 <TrainerList trainers = {trainers}/>
-        </Container>
+            </Container>
         </>
+
     );
 }

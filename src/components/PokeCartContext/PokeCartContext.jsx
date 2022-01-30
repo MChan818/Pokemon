@@ -17,11 +17,25 @@ export const PokeCartProvider = ({children}) => {
             console.log(PokeCart) //Chequeo
             return;
         }
-        else
+        else{
             SetPokeCart([...PokeCart, {name:pokemon.name, quantity:cantidad}]);
+        }
+        
     }
-    return(
-        <PokeCartContext.Provider value={{PokeCart, SetPokeCart, AddToCart}}>
+    const RemoveFromCart = (pokemon) =>{
+        console.log("tap")
+        if(PokeCart.find(name => name.name === pokemon.name) !== undefined){
+            let index = PokeCart.findIndex(name => name.name === pokemon.name)
+            PokeCart.splice(index,1);
+        }
+        console.log(PokeCart);
+        localStorage.setItem('Cart', JSON.stringify(PokeCart));
+    }
+
+        console.log(PokeCart);
+        
+        return(
+        <PokeCartContext.Provider value={{PokeCart, SetPokeCart, AddToCart, RemoveFromCart}}>
             {children}
         </PokeCartContext.Provider>
     )

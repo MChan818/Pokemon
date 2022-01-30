@@ -7,6 +7,7 @@ import './App.css';
 import { PokeCartProvider } from './components/PokeCartContext/PokeCartContext.jsx';
 import { Home } from './components/Home/Home.jsx';
 import { TrainerContainer } from './components/TrainerContainer/TrainerContainer.jsx';
+import { CartContainer } from './components/Cart/CartContainer.jsx';
 
 function App() {
 
@@ -19,16 +20,19 @@ function App() {
           <Route exact path = "/">
             <Home/>
           </Route>
-            <Route exact path = "/pokedex">
-              <PokeContainer/>
-            </Route>
-            <Route exact path = "/pokedex/:PokeID" component={PokeInfoContainer}>
-              <PokeInfoContainer/>
-            </Route>
-            <Route exact path = "/trainers">
-              <TrainerContainer/>
-            </Route>
-          </Switch>
+          <Route exact path = "/trainers">
+            <TrainerContainer/>
+          </Route>
+          <Route exact path = "/pokedex">
+            <PokeContainer/>
+          </Route>
+          <Route exact path = "/pokedex/:PokeID" component={PokeInfoContainer}>
+            <PokeInfoContainer/>
+          </Route>
+          <Route exact path = "/cart">
+            <CartContainer/>
+          </Route>
+        </Switch>
       </BrowserRouter>
     </PokeCartProvider>
   );

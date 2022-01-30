@@ -12,12 +12,12 @@ export function PokeContainer(){
         setContador(prev => prev + 1)
         console.log(contador);
     }
-    const fetchData = async () => {
-        let result =  await axios(`https://pokeapi.co/api/v2/pokemon?limit=${10 * contador}`);
-        setPoke(result.data.results);
-    };
-
+    
     useEffect(() => {
+        const fetchData = async () => {
+            let result =  await axios(`https://pokeapi.co/api/v2/pokemon?limit=${10 * contador}`);
+            setPoke(result.data.results);
+        };
         fetchData();
     }, [contador]);
 

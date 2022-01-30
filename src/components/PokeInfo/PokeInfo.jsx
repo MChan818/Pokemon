@@ -1,12 +1,11 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import './PokeInfo.css'
-import { PokeCartContext } from "../PokeCartContext/PokeCartContext";
 import { PokeDetail } from "../PokeCount/PokeCount";
 
 const PokeInfoD = ({ pokemon }) => {
     const [pokeInfoD, setPokeInfoD] = useState([]);
-    const {PokeCart} = useContext(PokeCartContext);
+
     useEffect(() => {
         const fetchData = async (url) => {
             const result = await axios(url);
@@ -17,8 +16,6 @@ const PokeInfoD = ({ pokemon }) => {
             fetchData(pokemon.url);
         }
     },[pokemon]);
-
-    console.log(PokeCart);
 
     return (
         <>

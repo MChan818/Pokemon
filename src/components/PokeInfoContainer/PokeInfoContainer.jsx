@@ -8,14 +8,16 @@ const PokeInfoContainer = () =>{
 
     const {PokeID} = useParams();
 
-    const fetchData = async () => {
-        let result =  await axios(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=${PokeID - 1}`);
-        setPokeContainer(result.data.results[0]);
-    };
     
     useEffect(() => {
+        const fetchData = async () => {
+            let result =  await axios(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=${PokeID - 1}`);
+            setPokeContainer(result.data.results[0]);
+        };
+
         fetchData();
-    });
+
+    },[PokeID]);
     return(
         <>
             <PokeInfoD pokemon={pokecontainer}/>

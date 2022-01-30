@@ -20,8 +20,7 @@ export const PokeDetail = ({pokemon}) =>{
     const btn_clear = () =>{
         setContador(0);
     }
-    
-    console.log(contador);
+
     return(
         <section className="shopping-container">
             <div className="counter-container">
@@ -37,7 +36,6 @@ export const PokeDetail = ({pokemon}) =>{
                 Agregar Pokemon
             </button>
 
-            {/* Verifico si tengo pokemones en el carrito, si tengo muestro el boton */}
             {PokeCart.length>0 ? (
                 <NavLink to={'/cart'}>
                     <button className="btn btn-primary my_btn">

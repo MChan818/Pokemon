@@ -2,8 +2,8 @@
 
 .fondo{
     background-image: url(https://images.alphacoders.com/103/thumb-1920-1039414.png);
-    background-size: cover;
-    height: 94vh;
+    background-size:cover;
+    height: 100vh;
     width: 100%;
 }
 
