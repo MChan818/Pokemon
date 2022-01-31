@@ -1,6 +1,7 @@
 import React from 'react';
 import Cart from '@material-ui/icons/ShoppingCart.js'
 import './Navbar.css'
+import { CartContainer } from '../Cart/CartContainer';
 
 export const NavBar = () =>{
     return(
@@ -13,7 +14,12 @@ export const NavBar = () =>{
                     <li className='Navbar_li'><a href="/trainers" className='Navbar_a'>Trainers</a></li>
                 </ul>
             </nav>
-            <a href="/cart"><Cart className='Cart-Icon'/></a>
+            <div className='dropdown'>
+                <a href="/cart"><Cart className='Cart-Icon'/></a>
+                <div className='dropdown-content'>
+                    <CartContainer/>
+                </div>
+            </div>
         </header>
     )
 }

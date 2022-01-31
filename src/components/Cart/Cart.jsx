@@ -9,7 +9,7 @@ export const Cart = (pokemon) =>{
         <>
             <div className="cart-list-container">
                 <p className="cart-list-txt">{pokemon.pokemon.name} x {pokemon.pokemon.quantity}</p>
-                <button className="btn btn-primary float_left" onClick={() => RemoveFromCart(pokemon.pokemon)}>Remove</button>
+                <button className="btn btn-primary remove-btn" onClick={() => RemoveFromCart(pokemon.pokemon)}>Remove</button>
             </div>
 
         </>

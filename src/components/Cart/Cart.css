@@ -36,7 +36,8 @@
     float: left;
 }
 
-.float_left{
-    float: left;
-    margin-left: 5vh;
+.remove-btn{
+    width: 10vh;
+    float: right;
+    transform: translate(-70vh);
 }
