@@ -4,8 +4,7 @@ export const PokeCartContext = createContext();
 
 export const PokeCartProvider = ({children}) => {
     const [PokeCart, SetPokeCart] = useState([]);
-
-
+    
     const AddToCart = (pokemon, cantidad) =>{
         if(cantidad === 0){
             alert("No se puede agregar 0 de este Pokemon");
@@ -13,8 +12,9 @@ export const PokeCartProvider = ({children}) => {
         }
         if(PokeCart.find(name => name.name === pokemon.name) !== undefined){//Verifico si existe el pokemon en el carrito
             let index = PokeCart.findIndex(name => name.name === pokemon.name) //Ubico el index del pokemon
-            PokeCart[index].quantity += cantidad; //Agrego 1 a la cantidad en vez de agregar un duplicado
-            console.log(PokeCart) //Chequeo
+            let newArr = [...PokeCart]; //Creo un array auxiliar y copio los datos de PokeCart
+            newArr[index].quantity += cantidad; //Agrego 1 a la cantidad en vez de agregar un duplicado
+            SetPokeCart(newArr);//Seteo PokeCart con los cambios
             return;
         }
         else{
@@ -23,18 +23,13 @@ export const PokeCartProvider = ({children}) => {
         
     }
     const RemoveFromCart = (pokemon) =>{
-        console.log("tap")
-        if(PokeCart.find(name => name.name === pokemon.name) !== undefined){
-            let index = PokeCart.findIndex(name => name.name === pokemon.name)
-            PokeCart.splice(index,1);
-        }
-        console.log(PokeCart);
-        localStorage.setItem('Cart', JSON.stringify(PokeCart));
+        const temp = PokeCart.filter(function(e){ //Filtro el array en un auxiliar para sacar el pokemon no deseado
+            return e !== pokemon
+        })
+        SetPokeCart(temp); //Seteo PokeCart con los cambios
     }
 
-        console.log(PokeCart);
-        
-        return(
+    return(
         <PokeCartContext.Provider value={{PokeCart, SetPokeCart, AddToCart, RemoveFromCart}}>
             {children}
         </PokeCartContext.Provider>

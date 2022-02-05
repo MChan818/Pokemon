@@ -30,6 +30,7 @@ function App() {
             <PokeInfoContainer/>
           </Route>
           <Route exact path = "/cart">
+            <h3 className="cart-title">Carrito de compras</h3>
             <CartContainer/>
           </Route>
         </Switch>

@@ -8,6 +8,11 @@ import { NavLink } from "react-router-dom";
 const Pokemon = ({ pokemon }) => {
     const [pokeInfo, setPokeInfo] = useState({});
 
+    const capitalize = (s) => { //Mayuscula en la primera letra
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
+
     useEffect(() => {
         const fetchData = async (url) => {
             const result = await axios(url);
@@ -24,10 +29,10 @@ const Pokemon = ({ pokemon }) => {
             { pokeInfo.name ? (
             <Card className="mb-3">
                 <Card.Body>
-                    <Card.Title className="text-uppercase">
-                        {pokeInfo.name}
+                    <Card.Title className="center">
+                        {capitalize(pokeInfo.name)}
                     </Card.Title>
-                    <Card.Img src={pokeInfo.sprites.front_default} />
+                    <Card.Img src={pokeInfo.sprites.front_default}/>
                     <Card.Text>Pokedex ID: {pokeInfo.id}</Card.Text>
                     <NavLink to={`/pokedex/${pokeInfo.id}`}>
                         <button className="btn btn-primary">

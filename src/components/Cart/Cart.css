@@ -1,3 +1,8 @@
+.cart-title{
+    font-size: 3vh;
+    margin-left: 10vh;
+}
+
 .empty-cart-container{
     height: 94vh;
     width: 100%;
@@ -25,19 +30,39 @@
 }
 
 .cart-list-container{
-    width: 100vh;
+    width: 200vh;
     height: 5vh;
-    margin-top: 1vh;
-    border-bottom: 2px solid rgba(180, 180, 180, 0.35);
+    line-height: 5vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: start;
 }
 
 .cart-list-txt{
     font-size: 2vh;
-    float: left;
+    text-align: center;
 }
 
 .remove-btn{
     width: 10vh;
-    float: right;
-    transform: translate(-70vh);
+}
+
+.pokemon-txt-container{
+    width: 40vh;
+    /* background-color: lightcoral; */
+}
+
+.cart-container{
+    border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+/* -------------Clases modificadas para el nav------------- */
+.empty-cart-container-nav{
+    border: 1px solid rgb(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+.nav-empty-cart-txt{
+    font-size: 2vh;
+    padding: 2vh;
 }

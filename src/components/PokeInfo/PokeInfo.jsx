@@ -40,8 +40,7 @@ const PokeInfoD = ({ pokemon }) => {
             </section>
         ):(
             <div className="center">
-                <h2 className="center">Error 404</h2>
-                <p>El pokemon no se encuentra en nuestra base de datos</p>
+                <h2 className="center">Cargando...</h2>
             </div>
         )}
         </>

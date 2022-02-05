@@ -2,7 +2,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Cart } from './Cart';
 
 
-export function CartList ({pokemons}){
+function CartList ({pokemons}){
     return(
         <Row>
             {pokemons.length && pokemons.map((pokemon, index)=>(

@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from '@material-ui/icons/ShoppingCart.js'
 import './Navbar.css'
-import { CartContainer } from '../Cart/CartContainer';
+import { NavCartContainer } from '../Cart/NavCartContainer';
 
 export const NavBar = () =>{
     return(
@@ -17,7 +17,7 @@ export const NavBar = () =>{
             <div className='dropdown'>
                 <a href="/cart"><Cart className='Cart-Icon'/></a>
                 <div className='dropdown-content'>
-                    <CartContainer/>
+                    <NavCartContainer/>
                 </div>
             </div>
         </header>
