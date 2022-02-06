@@ -33,15 +33,16 @@ export const PokeDetail = ({pokemon}) =>{
                 </button>
             </div>
             <button className="btn btn-primary my_btn" onClick={() => {AddToCart(pokemon, contador);btn_clear()}}>
-                Agregar Pokemon
+                Agregar al carrito
             </button>
-
             {PokeCart.length>0 ? (
-                <NavLink to={'/cart'}>
-                    <button className="btn btn-primary my_btn">
-                        Terminar mi compra
-                    </button>
-                </NavLink>
+                <section>
+                    <NavLink to={'/cart'}>
+                        <button className="btn btn-primary my_btn">
+                            Terminar mi compra
+                        </button>
+                    </NavLink>
+                </section>
             ) : (
                 <></>
             )}

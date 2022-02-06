@@ -1,0 +1,16 @@
+.form-container{
+    height: 100%;
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.test:focus{
+    box-shadow: none !important;
+    outline: none !important;
+}

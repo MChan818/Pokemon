@@ -4,6 +4,7 @@ export const PokeCartContext = createContext();
 
 export const PokeCartProvider = ({children}) => {
     const [PokeCart, SetPokeCart] = useState([]);
+    const [TotalPrice, setTotal] = useState(0);
     
     const AddToCart = (pokemon, cantidad) =>{
         if(cantidad === 0){
@@ -14,11 +15,14 @@ export const PokeCartProvider = ({children}) => {
             let index = PokeCart.findIndex(name => name.name === pokemon.name) //Ubico el index del pokemon
             let newArr = [...PokeCart]; //Creo un array auxiliar y copio los datos de PokeCart
             newArr[index].quantity += cantidad; //Agrego 1 a la cantidad en vez de agregar un duplicado
+            newArr[index].price += cantidad*pokemon.price; //Actualizamos el precio
             SetPokeCart(newArr);//Seteo PokeCart con los cambios
+            setTotal(newArr[index].price);//Seteo el precio con los cambios
             return;
         }
         else{
-            SetPokeCart([...PokeCart, {name:pokemon.name, quantity:cantidad}]);
+            SetPokeCart([...PokeCart, {name:pokemon.name, quantity:cantidad, price:(pokemon.price*cantidad)}]);
+            setTotal(prev=>prev+(pokemon.price*cantidad));
         }
         
     }
@@ -27,10 +31,15 @@ export const PokeCartProvider = ({children}) => {
             return e !== pokemon
         })
         SetPokeCart(temp); //Seteo PokeCart con los cambios
+        setTotal(prev=>prev-(pokemon.price));//Actualizo el precio
+    }
+    const BuyCart = () =>{
+        SetPokeCart([]);//Vaciamos el carrito
+        setTotal(0);//Vaciamos el precio
     }
 
     return(
-        <PokeCartContext.Provider value={{PokeCart, SetPokeCart, AddToCart, RemoveFromCart}}>
+        <PokeCartContext.Provider value={{PokeCart,TotalPrice, SetPokeCart, AddToCart, RemoveFromCart, BuyCart}}>
             {children}
         </PokeCartContext.Provider>
     )

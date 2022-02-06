@@ -5,7 +5,7 @@ import './Cart.css'
 import { NavLink } from "react-router-dom";
 
 export const CartContainer = () =>{
-    const {PokeCart} = useContext(PokeCartContext);
+    const {PokeCart, BuyCart, TotalPrice} = useContext(PokeCartContext);
     
     return(
         <>
@@ -14,13 +14,28 @@ export const CartContainer = () =>{
                 <div className='empty-cart empty-cart-txt-center'>
                     <p>Parece que por aquí no hay nada...</p>
                     <p>Agreguemos algo al carrito!</p>
-                    <NavLink to={'/pokedex'}>
+                    <NavLink to={'/pokeballs'}>
                         <button className="btn btn-primary">Volver a la tienda</button>
                     </NavLink>
                 </div>
             </section>
         ):(
-            <CartList pokemons = {PokeCart}/>
+            <>
+                <CartList pokemons = {PokeCart}/>   
+                <div className="total-container">
+                    <p className="total-txt">Total: ${TotalPrice}</p>
+                </div>
+            </>
+        )}
+
+        {PokeCart.length >= 1 ? (
+        <NavLink to={'/checkout'}>
+            <section className="buy-btn-container">
+                <button className="btn btn-primary buy-btn" onClick={BuyCart}>Comprar</button>
+            </section>
+        </NavLink>
+        ):(
+        <></>//No se muestra nada
         )}
         </>
     );

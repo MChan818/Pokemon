@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import './PokeInfo.css'
-import { PokeDetail } from "../PokeCount/PokeCount";
 
 const PokeInfoD = ({ pokemon }) => {
     const [pokeInfoD, setPokeInfoD] = useState([]);
@@ -36,7 +35,7 @@ const PokeInfoD = ({ pokemon }) => {
                             <p className="PokeSubtitle"><strong>Weight:</strong> {pokeInfoD.weight}kg</p>
                         </div>
                     </div>
-                    <PokeDetail pokemon = {pokeInfoD}></PokeDetail>
+                    {/* <PokeDetail pokemon = {pokeInfoD}></PokeDetail> */}
             </section>
         ):(
             <div className="center">
