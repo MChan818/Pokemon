@@ -21,7 +21,6 @@ const Complete = () =>{
 
     setTimeout(() => {
         setLoading(false)
-        console.log("opa")
     }, 3000);
 
     return(

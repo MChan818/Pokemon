@@ -47,12 +47,11 @@ const Checkout = () =>{
             const orders = db.collection("orders");
             //Guardamos la id para mostrarlo en Complete.jsx (como numero de comprobante)
             orders.add(orden).then(({id}) =>{
-                console.log(id);
                 setOrderID(id);
-            }).catch(()=>{
-                console.log("Algo anda mal...")
+            }).catch((error)=>{
+                console.log("Error", error);
             }).finally(()=>{
-                console.log("Se cargo con éxito")
+                console.log("La compra se realizo con exito")
             });
             EmptyCart();
         }
@@ -96,7 +95,7 @@ const Checkout = () =>{
                     </Form.Text>
                 </Form.Group>
             <NavLink to={'/complete'}>
-                <Button variant="primary" onClick={() => {buy()}}>
+                <Button variant="primary" type="submit" onClick={() => {buy()}}>
                     Terminar mi compra
                 </Button>
             </NavLink>

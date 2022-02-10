@@ -15,7 +15,7 @@ export const PokeCartProvider = ({children}) => {
         if(PokeCart.find(name => name.name === pokemon.name) !== undefined){//Verifico si existe el pokemon en el carrito
             let index = PokeCart.findIndex(name => name.name === pokemon.name) //Ubico el index del pokemon
             let newArr = [...PokeCart]; //Creo un array auxiliar y copio los datos de PokeCart
-            newArr[index].quantity += cantidad; //Agrego 1 a la cantidad en vez de agregar un duplicado
+            newArr[index].quantity += cantidad; //Agrego "cantidad" a la cantidad en vez de agregar un duplicado
             newArr[index].price += cantidad*pokemon.price; //Actualizamos el precio
             SetPokeCart(newArr);//Seteo PokeCart con los cambios
             setTotal(newArr[index].price);//Seteo el precio con los cambios
