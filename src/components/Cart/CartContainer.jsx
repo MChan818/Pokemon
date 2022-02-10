@@ -5,7 +5,7 @@ import './Cart.css'
 import { NavLink } from "react-router-dom";
 
 export const CartContainer = () =>{
-    const {PokeCart, BuyCart, TotalPrice} = useContext(PokeCartContext);
+    const {PokeCart, TotalPrice} = useContext(PokeCartContext);
     
     return(
         <>
@@ -31,7 +31,7 @@ export const CartContainer = () =>{
         {PokeCart.length >= 1 ? (
         <NavLink to={'/checkout'}>
             <section className="buy-btn-container">
-                <button className="btn btn-primary buy-btn" onClick={BuyCart}>Comprar</button>
+                <button className="btn btn-primary buy-btn">Comprar</button>
             </section>
         </NavLink>
         ):(

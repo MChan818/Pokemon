@@ -8,7 +8,8 @@ import { TrainerContainer } from './components/TrainerContainer/TrainerContainer
 import { CartContainer } from './components/Cart/CartContainer.jsx';
 import { PokeballsContainer } from './components/Pokeballs/PokeballsContainer.jsx';
 import { PokeballProvider } from './components/Pokeballs/PokeballContext.jsx';
-import {Checkout} from './components/Checkout/Checkout.jsx';
+import Checkout from './components/Checkout/Checkout.jsx';
+import Complete from './components/Complete/Complete.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -34,6 +35,10 @@ function App() {
 
           <Route exact path = "/pokedex/:PokeID" component={PokeInfoContainer}>
             <PokeInfoContainer/>
+          </Route>
+
+          <Route exact path = "/complete">
+            <Complete/>
           </Route>
 
           <PokeballProvider>

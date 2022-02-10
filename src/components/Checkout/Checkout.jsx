@@ -1,28 +1,67 @@
 import {Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { PokeCartContext } from "../PokeCartContext/PokeCartContext";
+import { getFirestore } from "../../firebase";
+import { NavLink , withRouter} from "react-router-dom";
 import './Checkout.css'
 
-export const Checkout = () =>{
+const Checkout = () =>{
+    const {PokeCart, TotalPrice, EmptyCart, setOrderID} = useContext(PokeCartContext);
     const [mail, setMail] = useState("");
     const [mail2, setMail2] = useState("");
     const [name, setName] = useState("");
     const [lastname, setLastname] = useState("");
     const [num, setNum] = useState("");
-
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.history.push('/complete');
+      }
+    
     const auth = () =>{
         if(mail !== mail2){
             alert('Los emails no coinciden');
+            return false;
         }
-        if((name || lastname || num || mail || mail2) === ""){
+        if((name && lastname && num && mail && mail2) === ""){
             alert('Debe rellenar todos los campos')
+            return false;
         }
         else
-            console.log('Success')
+        console.log("Success")
+        return true;
     }
-
+    
+    const buy = () =>{
+        if(auth() === false){
+            return;
+        }
+        else{
+            //Como se guarda la orden en la db
+            let orden = {
+                buyer: {Name:name, LastName:lastname, Mail: mail, phone: num},
+                items: {PokeCart},
+                total: {TotalPrice},
+            };
+            const db = getFirestore();
+            const orders = db.collection("orders");
+            //Guardamos la id para mostrarlo en Complete.jsx (como numero de comprobante)
+            orders.add(orden).then(({id}) =>{
+                console.log(id);
+                setOrderID(id);
+            }).catch(()=>{
+                console.log("Algo anda mal...")
+            }).finally(()=>{
+                console.log("Se cargo con éxito")
+            });
+            EmptyCart();
+        }
+    }
+    
+    
     return(
         <section className="form-container">
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Nombre:</Form.Label>
                     <Form.Control type="text" placeholder="Ingrese su Nombre" onChange={e=>setName(e.target.value)}/>
@@ -56,11 +95,14 @@ export const Checkout = () =>{
                     Ingrese de nuevo su dirección de correo
                     </Form.Text>
                 </Form.Group>
-
-                <Button variant="primary" type="submit" onClick={auth}>
+            <NavLink to={'/complete'}>
+                <Button variant="primary" onClick={() => {buy()}}>
                     Terminar mi compra
                 </Button>
+            </NavLink>
             </Form>
         </section>
     );
 }
+
+export default withRouter(Checkout);

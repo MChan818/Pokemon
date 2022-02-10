@@ -5,6 +5,7 @@ export const PokeCartContext = createContext();
 export const PokeCartProvider = ({children}) => {
     const [PokeCart, SetPokeCart] = useState([]);
     const [TotalPrice, setTotal] = useState(0);
+    const [OrderID, setOrderID] = useState("");
     
     const AddToCart = (pokemon, cantidad) =>{
         if(cantidad === 0){
@@ -33,13 +34,13 @@ export const PokeCartProvider = ({children}) => {
         SetPokeCart(temp); //Seteo PokeCart con los cambios
         setTotal(prev=>prev-(pokemon.price));//Actualizo el precio
     }
-    const BuyCart = () =>{
+    const EmptyCart = () =>{
         SetPokeCart([]);//Vaciamos el carrito
         setTotal(0);//Vaciamos el precio
     }
 
     return(
-        <PokeCartContext.Provider value={{PokeCart,TotalPrice, SetPokeCart, AddToCart, RemoveFromCart, BuyCart}}>
+        <PokeCartContext.Provider value={{PokeCart,TotalPrice, SetPokeCart, AddToCart, RemoveFromCart, EmptyCart, OrderID, setOrderID}}>
             {children}
         </PokeCartContext.Provider>
     )
