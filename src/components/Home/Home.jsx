@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import './Home.css'
 import logo from './img/logo.png'
 
 
 export const Home = () => {
+
     return (
         <>
         <section className="fondo">

@@ -32,7 +32,7 @@ const Pokemon = ({ pokemon }) => {
                     <Card.Title className="center">
                         {capitalize(pokeInfo.name)}
                     </Card.Title>
-                    <Card.Img src={pokeInfo.sprites.front_default}/>
+                    <Card.Img src={pokeInfo.sprites.other['official-artwork'].front_default}/>
                     <Card.Text>Pokedex ID: {pokeInfo.id}</Card.Text>
                     <NavLink to={`/pokedex/${pokeInfo.id}`}>
                         <button className="btn btn-primary">

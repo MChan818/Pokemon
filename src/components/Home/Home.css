@@ -3,8 +3,12 @@
 .fondo{
     background-image: url(https://images.alphacoders.com/103/thumb-1920-1039414.png);
     background-size:cover;
-    height: 100vh;
+    background-position: center;
+    height: 90vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-title{
@@ -12,5 +16,5 @@
 }
 
 .logo{
-    transform: translate(50%, 50%);
+    height: 40%;
 }

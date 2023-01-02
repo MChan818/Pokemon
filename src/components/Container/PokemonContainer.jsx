@@ -29,8 +29,16 @@ export function PokeContainer(){
             <p>Link: https://pokeapi.co/</p>
         </Container>
         <Container>
-            <PokeList pokemons = {pokemons}/>
-             <button onClick={morePokemons} className="btn btn-primary">Más Pokemones</button>
+            {pokemons ? (
+                <>
+                    <PokeList pokemons = {pokemons}/>
+                    <button onClick={morePokemons} className="btn btn-primary">Más Pokemones</button>
+                </>
+            ):(
+                <>
+                    <h2>Loading...</h2>
+                </>
+            )}
         </Container>
         </>
     );

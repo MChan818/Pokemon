@@ -16,7 +16,7 @@ const Checkout = () =>{
     const handleSubmit = (event) => {
         event.preventDefault();
         this.props.history.push('/complete');
-      }
+    }
     
     const auth = () =>{
         if(mail !== mail2){

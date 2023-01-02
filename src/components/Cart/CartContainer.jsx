@@ -1,14 +1,19 @@
-import {useContext} from "react";
+import * as React from "react";
 import { PokeCartContext } from "../PokeCartContext/PokeCartContext";
 import CartList from "./CartList";
-import './Cart.css'
 import { NavLink } from "react-router-dom";
+import './Cart.css'
 
 export const CartContainer = () =>{
-    const {PokeCart, TotalPrice} = useContext(PokeCartContext);
+    const {PokeCart, TotalPrice} = React.useContext(PokeCartContext);
+
+    React.useEffect(()=>{
+        console.log(PokeCart)
+    },[PokeCart])
     
     return(
         <>
+        <h3 className="cart-title">Carrito de compras</h3>
         {PokeCart.length === 0 ? (
             <section className="empty-cart-container">
                 <div className='empty-cart empty-cart-txt-center'>
@@ -21,21 +26,20 @@ export const CartContainer = () =>{
             </section>
         ):(
             <>
-                <CartList pokemons = {PokeCart}/>   
-                <div className="total-container">
-                    <p className="total-txt">Total: ${TotalPrice}</p>
+            <section className="full-cart-container">
+                <div className='full-cart'>
+                    <CartList pokemons = {PokeCart}/>
+                    <div className="total-container">
+                        <p className="total-txt"><strong>Total: ${TotalPrice}</strong></p>
+                    </div>
+                    <NavLink to={'/checkout'}>
+                        <section className="buy-btn-container">
+                            <button className="btn btn-primary buy-btn">Comprar</button>
+                        </section>
+                    </NavLink>
                 </div>
-            </>
-        )}
-
-        {PokeCart.length >= 1 ? (
-        <NavLink to={'/checkout'}>
-            <section className="buy-btn-container">
-                <button className="btn btn-primary buy-btn">Comprar</button>
             </section>
-        </NavLink>
-        ):(
-        <></>//No se muestra nada
+            </>
         )}
         </>
     );

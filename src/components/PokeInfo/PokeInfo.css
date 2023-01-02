@@ -18,15 +18,13 @@
 .center{
     text-align: center;
 }
-.PokeSubtitle{
-    font-size: 2.5vh;
-}
 
 .PokeInfoLeft {
     width: 50%;
     height: 75%;
     float: left;
     background-color: rgb(235, 235, 235);
+    border: 1px solid black;
 }
 
 .PokeInfoRight {
@@ -36,12 +34,102 @@
     
 }
 
-.PokeImg{
-    width: 50%;
-    margin-left: 25%;
-}
-
 .my_btn{
 margin-left: 4%;
 margin-top: 2.5%;
+}
+
+/* --------------------- */
+
+.pokemon-container{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.pokemon-card-container{
+    height: 90%;
+    width: 80%;
+    background-color: rgba(240, 69, 69, 0.7);
+    border-radius: 1vh;
+    border: 1px solid black;
+}
+
+.pokemon-header-container{
+    height: 50%;
+    width: 100%;
+    padding: 2vh 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon-header1{
+    height: 100%;
+    width: 40%;
+    border-radius: 1vh;
+    border: 1px solid black;
+    background-color: rgba(82, 215, 255, 0.9);
+}
+
+.pokemon-image-container{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PokeImg{
+    width: 50%;
+}
+
+.pokemon-header2{
+    height: 100%;
+    width: 50%;
+    border-radius: 1vh;
+    border: 1px solid black;
+    background-color: #FF6D6D;
+}
+.PokeSubtitle{
+    font-size: 2.5vh;
+    border-bottom: 2px solid black;
+    margin: 2vh 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.PokeSubtitle strong{
+    width: 30%;
+    text-align: center;
+}
+.PokeSubtitle p{
+    width: 70%;
+    margin: 0;
+    text-align: center;
+}
+
+.pokemon-main-container{
+    height: 50%;
+    width: 100%;
+    padding: 2vh 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon-description{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 1vh;
+    background-color: #FF6D6D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

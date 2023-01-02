@@ -1,14 +1,24 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import axios from "axios";
 import './PokeInfo.css'
 
 const PokeInfoD = ({ pokemon }) => {
-    const [pokeInfoD, setPokeInfoD] = useState([]);
+    const [pokeInfoD, setPokeInfoD] = React.useState([]);
+    const [pokeDescription, setPokeDescription] = React.useState()
 
-    useEffect(() => {
+    React.useEffect(() => {
         const fetchData = async (url) => {
-            const result = await axios(url);
-            setPokeInfoD(result.data);
+            await axios.get(url).then(res=>{
+                if(res){
+                    axios.get(res.data.species.url).then(res=>{
+                        setPokeDescription(res.data.flavor_text_entries[0].flavor_text)
+                    })
+                    return setPokeInfoD(res.data);
+                }
+            }).catch(e=>{
+                console.log(e)
+                return alert(e);
+            })
         };
         
         if(pokemon.url){
@@ -19,24 +29,56 @@ const PokeInfoD = ({ pokemon }) => {
     return (
         <>
         {pokeInfoD.name ? (
-            <section className="PokeContainer">
-                <h1 className="center text-uppercase">{pokeInfoD.name}</h1>
-                    <div className="PokeInfoLeft">
-                        <img src={pokeInfoD.sprites.front_default} alt="Pokemon_front_sprite" className="PokeImg"/>
-                        <p className="PokeSubtitle"><strong>Type:</strong> {pokeInfoD.types[0].type.name}</p>
-                    </div>
+            <>
+                <section className="pokemon-container">
+                    <div className="pokemon-card-container">
+                        <div className="pokemon-header-container">
 
-                    <div className="PokeInfoRight">
-                        <div className="PokeInfoContainer">
-                            <p className="PokeSubtitle"><strong>Name:</strong> {pokeInfoD.name}</p>
-                            <p className="PokeSubtitle"><strong>Pokedex ID:</strong> {pokeInfoD.id}</p>
-                            <p className="PokeSubtitle"><strong>Ability:</strong> {pokeInfoD.abilities[0].ability.name}</p>
-                            <p className="PokeSubtitle"><strong>Height:</strong> {pokeInfoD.height / 10}m</p>
-                            <p className="PokeSubtitle"><strong>Weight:</strong> {pokeInfoD.weight}kg</p>
+                            <div className="pokemon-header1">
+                                <div className="pokemon-image-container">
+                                    <img src={pokeInfoD.sprites.other['official-artwork'].front_default} alt="Pokemon_front_sprite" className="PokeImg"/>
+                                </div>
+
+                                <h2 className="center text-uppercase">{pokeInfoD.name}</h2>
+                            </div>
+
+                            <div className="pokemon-header2">
+                                <div className="PokeSubtitle">
+                                    <strong>Pokedex ID:</strong>
+                                    <p>{pokeInfoD.id}</p>
+                                </div>
+                                <div className="PokeSubtitle">
+                                    <strong>Ability:</strong>
+                                    {pokeInfoD.abilities.map(e=>{
+                                        return(<p className="text-uppercase">{e.ability.name}</p>)
+                                    })}
+                                </div>
+                                <div className="PokeSubtitle">
+                                    <strong>Height:</strong>
+                                    <p>{pokeInfoD.height / 10}m</p>
+                                    <strong>Weight:</strong>
+                                    <p>{pokeInfoD.weight/10}kg</p>
+                                </div>
+                                <div className="PokeSubtitle">
+                                    <strong>Types:</strong>
+                                    {pokeInfoD.types.map(e=>{
+                                        return(<p className="text-uppercase">{e.type.name}</p>)
+                                    })}
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div className="pokemon-main-container">
+                            <div className="pokemon-description">
+                                <p className="text-uppercase">
+                                    {pokeDescription}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    {/* <PokeDetail pokemon = {pokeInfoD}></PokeDetail> */}
-            </section>
+                </section>
+            </>
         ):(
             <div className="center">
                 <h2 className="center">Cargando...</h2>

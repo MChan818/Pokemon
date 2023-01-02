@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import React,{useContext} from "react";
 import { PokeCartContext } from "../PokeCartContext/PokeCartContext";
 import CartList from "./CartList";
 import './Cart.css'
@@ -6,6 +6,10 @@ import { NavLink } from "react-router-dom";
 
 export const NavCartContainer = () =>{
     const {PokeCart, TotalPrice} = useContext(PokeCartContext);
+
+    React.useEffect(()=>{
+        console.log(PokeCart)
+    },[PokeCart])
 
     return(
         <>
@@ -21,7 +25,16 @@ export const NavCartContainer = () =>{
             </section>
         ):(
             <section className="cart-container">
-                <CartList pokemons = {PokeCart}/>
+                {PokeCart ? (
+                    <>
+                    {PokeCart.map((e,index)=>{
+                        return(<p key={index}>{e.name} x {e.price} x {e.quantity}</p>)
+                    })}
+                    </>
+                ):(
+                    <>
+                    </>
+                )}
                 <div className="total-container">
                     <p className="total-txt">Total: ${TotalPrice}</p>
                 </div>

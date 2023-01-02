@@ -9,11 +9,17 @@ header{
   padding: 0px 5%;
   align-items: center;
   background-color: #222;
+  height: 10vh;
 }
 
-.Navbar_li, .Navbar_a, .Cart-Icon{
+.Navbar_li, .Navbar_a{
   color: white;
   font-size: 2.5vh;
+  font-weight: 400;
+  text-decoration: none;
+}
+.Cart-Icon{
+  color: white;
   font-weight: 400;
   text-decoration: none;
 }

@@ -1,4 +1,4 @@
-import {NavBar} from './components/NavBar/Navbar.js';
+import {NavBar} from './components/NavBar/Navbar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { PokeContainer } from './components/Container/PokemonContainer';
 import PokeInfoContainer from './components/PokeInfoContainer/PokeInfoContainer';
@@ -10,6 +10,7 @@ import { PokeballsContainer } from './components/Pokeballs/PokeballsContainer.js
 import { PokeballProvider } from './components/Pokeballs/PokeballContext.jsx';
 import Checkout from './components/Checkout/Checkout.jsx';
 import Complete from './components/Complete/Complete.jsx';
+import CustomizedSnackbars from './components/Snackbars/Snackbars';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
     <BrowserRouter>
       {/* NavBar se mantiene en todas las paginas */}
         <NavBar/>
+        <CustomizedSnackbars/>
         <Switch>
           <Route exact path = "/">
             <Home/>
@@ -43,7 +45,6 @@ function App() {
 
           <PokeballProvider>
             <Route exact path = "/cart">
-              <h3 className="cart-title">Carrito de compras</h3>
               <CartContainer/>
             </Route>
             <Route exact path = "/pokeballs">

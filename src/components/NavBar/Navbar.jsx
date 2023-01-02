@@ -18,7 +18,9 @@ export const NavBar = () =>{
                 </ul>
             </nav>
             <div className='dropdown'>
-                <NavLink to={'/cart'}><Cart className='Cart-Icon'/></NavLink>
+                <NavLink to={'/cart'}>
+                    <Cart className='Cart-Icon'/>
+                </NavLink>
                 <div className='dropdown-content'>
                     <NavCartContainer/>
                 </div>
