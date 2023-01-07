@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/ReactJS/static/css/main.7d637068.chunk.css",
-    "main.js": "/ReactJS/static/js/main.9d0adeab.chunk.js",
-    "main.js.map": "/ReactJS/static/js/main.9d0adeab.chunk.js.map",
-    "runtime-main.js": "/ReactJS/static/js/runtime-main.39b3c025.js",
-    "runtime-main.js.map": "/ReactJS/static/js/runtime-main.39b3c025.js.map",
+    "main.css": "/ReactJS/static/css/main.6e666dca.chunk.css",
+    "main.js": "/ReactJS/static/js/main.e34fb08e.chunk.js",
+    "main.js.map": "/ReactJS/static/js/main.e34fb08e.chunk.js.map",
+    "runtime-main.js": "/ReactJS/static/js/runtime-main.bebe888f.js",
+    "runtime-main.js.map": "/ReactJS/static/js/runtime-main.bebe888f.js.map",
     "static/css/2.0a9ec390.chunk.css": "/ReactJS/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.a3ffc895.chunk.js": "/ReactJS/static/js/2.a3ffc895.chunk.js",
-    "static/js/2.a3ffc895.chunk.js.map": "/ReactJS/static/js/2.a3ffc895.chunk.js.map",
-    "static/js/3.179509a3.chunk.js": "/ReactJS/static/js/3.179509a3.chunk.js",
-    "static/js/3.179509a3.chunk.js.map": "/ReactJS/static/js/3.179509a3.chunk.js.map",
+    "static/js/2.30c5b612.chunk.js": "/ReactJS/static/js/2.30c5b612.chunk.js",
+    "static/js/2.30c5b612.chunk.js.map": "/ReactJS/static/js/2.30c5b612.chunk.js.map",
+    "static/js/3.a46cb429.chunk.js": "/ReactJS/static/js/3.a46cb429.chunk.js",
+    "static/js/3.a46cb429.chunk.js.map": "/ReactJS/static/js/3.a46cb429.chunk.js.map",
     "index.html": "/ReactJS/index.html",
     "static/css/2.0a9ec390.chunk.css.map": "/ReactJS/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.7d637068.chunk.css.map": "/ReactJS/static/css/main.7d637068.chunk.css.map",
-    "static/js/2.a3ffc895.chunk.js.LICENSE.txt": "/ReactJS/static/js/2.a3ffc895.chunk.js.LICENSE.txt",
+    "static/css/main.6e666dca.chunk.css.map": "/ReactJS/static/css/main.6e666dca.chunk.css.map",
+    "static/js/2.30c5b612.chunk.js.LICENSE.txt": "/ReactJS/static/js/2.30c5b612.chunk.js.LICENSE.txt",
     "static/media/PokeInfo.css": "/ReactJS/static/media/background.35fecfd5.jpg",
     "static/media/logo.c372a052.png": "/ReactJS/static/media/logo.c372a052.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.39b3c025.js",
+    "static/js/runtime-main.bebe888f.js",
     "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.a3ffc895.chunk.js",
-    "static/css/main.7d637068.chunk.css",
-    "static/js/main.9d0adeab.chunk.js"
+    "static/js/2.30c5b612.chunk.js",
+    "static/css/main.6e666dca.chunk.css",
+    "static/js/main.e34fb08e.chunk.js"
   ]
 }
