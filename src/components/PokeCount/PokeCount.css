@@ -1,12 +1,25 @@
-.counter-container{
-    width: 15vh;
-    height: 5vh;
+*{
+    margin: 0;
+}
+
+.item-counter-container{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-counter{
+    margin-bottom: 0;
+    width: 70%;
+    height: 50%;
     background-color: rgb(231, 229, 229);
-    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
 }
 
 .counter-display{
-    float: left;
     width: 45%;
     height: 5vh;
     /* background-color: lightpink; */
@@ -16,10 +29,25 @@
 .counter-btn{
     height: 5vh;
     width: 27.5%;
-    float: left;
+    font-size: 5vh;
 }
 
 .shopping-container{
     height: 10vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addToCart-container{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addToCart_btn{
+    height: 50%;
 }

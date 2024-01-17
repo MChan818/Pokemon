@@ -1,6 +1,5 @@
 import React,{useContext} from "react";
 import { PokeCartContext } from "../PokeCartContext/PokeCartContext";
-import CartList from "./CartList";
 import './Cart.css'
 import { NavLink } from "react-router-dom";
 
@@ -24,11 +23,37 @@ export const NavCartContainer = () =>{
                 </div>
             </section>
         ):(
-            <section className="cart-container">
+            <section className="navcart-items-container">
+                <ul className="navcart-itemlist-container">
+
+                </ul>
+                <th className="navcart-item-container" style={{borderBottom:'2px solid black'}}>
+                    <div className="navcart-itemName">
+                        <h5>Nombre</h5>
+                    </div>
+                    <div className="navcart-itemQuantity">
+                        <h5>Cantidad</h5>
+                    </div>
+                    <div className="navcart-itemPrice">
+                        <h5>Precio</h5>
+                    </div>
+                </th>
                 {PokeCart ? (
                     <>
                     {PokeCart.map((e,index)=>{
-                        return(<p key={index}>{e.name} x {e.price} x {e.quantity}</p>)
+                        return(
+                            <li className="navcart-item-container" key={index}>
+                                <div className="navcart-itemName">
+                                    <h6>{e.name}</h6>
+                                </div>
+                                <div className="navcart-itemQuantity">
+                                    <h6>x{e.quantity}</h6>
+                                </div>
+                                <div className="navcart-itemPrice">
+                                    <h6>${e.price}</h6>
+                                </div>
+                            </li>
+                        )
                     })}
                     </>
                 ):(

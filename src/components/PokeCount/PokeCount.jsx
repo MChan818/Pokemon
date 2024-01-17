@@ -1,10 +1,9 @@
 import { useContext, useState} from "react";
-import { NavLink } from "react-router-dom";
 import { PokeCartContext } from "../PokeCartContext/PokeCartContext";
 import "./PokeCount.css"
 
 export const PokeDetail = ({pokemon}) =>{
-    const {PokeCart, AddToCart} = useContext(PokeCartContext);
+    const {AddToCart} = useContext(PokeCartContext);
     const [contador, setContador] = useState(0);
 
     const btn_plus = () =>{
@@ -23,18 +22,23 @@ export const PokeDetail = ({pokemon}) =>{
 
     return(
         <section className="shopping-container">
-            <div className="counter-container">
-                <button onClick={btn_min} className="btn btn-primary counter-btn">
-                    -
-                </button>
-                <p className="counter-display">{contador}</p>
-                <button onClick={btn_plus} className="btn btn-primary counter-btn">
-                    +
+            <div className="item-counter-container">
+                <div className="item-counter">
+                    <button onClick={btn_min} className="btn btn-primary counter-btn">
+                        <h4>-</h4>
+                    </button>
+                    <p className="counter-display">{contador}</p>
+                    <button onClick={btn_plus} className="btn btn-primary counter-btn">
+                        <h4>+</h4>
+                    </button>
+                </div>
+            </div>
+
+            <div className="addToCart-container">
+                <button className="btn btn-primary addToCart_btn" onClick={() => {AddToCart(pokemon, contador);btn_clear()}}>
+                    Agregar al carrito
                 </button>
             </div>
-            <button className="btn btn-primary my_btn" onClick={() => {AddToCart(pokemon, contador);btn_clear()}}>
-                Agregar al carrito
-            </button>
         </section>
     );
 }

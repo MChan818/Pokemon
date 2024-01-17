@@ -1,5 +1,5 @@
 import {useContext, useState} from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { PokeCartContext } from "../PokeCartContext/PokeCartContext";
 import Lottie from "react-lottie";
 import Loader from '../Animations/loading.json'
@@ -7,7 +7,7 @@ import Loader from '../Animations/loading.json'
 import './Complete.css'
 
 const Complete = () =>{
-    const {OrderID} = useContext(PokeCartContext);
+    const {OrderID} = useParams();
     const [Loading, setLoading] = useState(true);
 
     const defaultOptions = {

@@ -71,9 +71,9 @@ const PokeInfoD = ({ pokemon }) => {
                         
                         <div className="pokemon-main-container">
                             <div className="pokemon-description">
-                                <p className="text-uppercase">
+                                <h4 className="text-uppercase">
                                     {pokeDescription}
-                                </p>
+                                </h4>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@ function App() {
         <NavBar/>
         <CustomizedSnackbars/>
         <Switch>
-          <Route exact path = "/">
+          <Route exact path = "/ReactJS">
             <Home/>
           </Route>
 
@@ -39,7 +39,7 @@ function App() {
             <PokeInfoContainer/>
           </Route>
 
-          <Route exact path = "/complete">
+          <Route exact path = "/complete/:OrderID">
             <Complete/>
           </Route>
 

@@ -11,7 +11,7 @@ export const NavBar = () =>{
             <nav>
                 <ul className='Navbar_ul'>
                     {/* Usamos NavLink en vez de <a> para que no haga un full refresh la pagina */}
-                    <li className='Navbar_li'><NavLink to={'/'} className='Navbar_a'>Inicio</NavLink></li>
+                    <li className='Navbar_li'><NavLink to={'/ReactJS'} className='Navbar_a'>Inicio</NavLink></li>
                     <li className='Navbar_li'><NavLink to={'/pokedex'} className='Navbar_a'>Pokédex</NavLink></li>
                     <li className='Navbar_li'><NavLink to={'/pokeballs'} className='Navbar_a'>Pokéballs</NavLink></li>
                     <li className='Navbar_li'><NavLink to={'/trainers'} className='Navbar_a'>Trainers</NavLink></li>

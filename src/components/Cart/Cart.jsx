@@ -6,7 +6,7 @@ import './Cart.css'
 
 
 export const Cart = (pokemon) =>{
-    const {RemoveFromCart,TakeFromCart,PokeCart} = useContext(PokeCartContext);
+    const {RemoveFromCart,TakeFromCart,AddFromCart,PokeCart} = useContext(PokeCartContext);
 
     const capitalize = (s) => { //Mayuscula en la primera letra
         if (typeof s !== 'string') return ''
@@ -26,9 +26,15 @@ export const Cart = (pokemon) =>{
                 </div>
 
                 <div className='cart-list2'>
-                    <button className="btn btn-primary counter-btn" onClick={() => TakeFromCart(pokemon.pokemon)}>-</button>
-                    <p className="cart-list-txt">{pokemon.pokemon.quantity}</p>
-                    <button className="btn btn-primary counter-btn" onClick={() => TakeFromCart(pokemon.pokemon)}>+</button>
+                    <div className='cart-counter-container'>
+                        <button className="btn btn-primary cart-counter-btn" onClick={() => TakeFromCart(pokemon.pokemon)} style={{width:'40px'}}>
+                            <h6>-</h6>
+                        </button>
+                        <p className="cart-list-txt">{pokemon.pokemon.quantity}</p>
+                        <button className="btn btn-primary cart-counter-btn" onClick={() => AddFromCart(pokemon.pokemon)} style={{width:'40px'}}>
+                            <h6>+</h6>
+                        </button>
+                    </div>
                 </div>
 
                 <div className='cart-list3'>
